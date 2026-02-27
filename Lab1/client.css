@@ -55,8 +55,7 @@ body {
     padding: 3px;
 }
 
-.main-container > div {
-    padding-left: 10px;   
+.main-container > div {   
     box-sizing: border-box;
 }
 
