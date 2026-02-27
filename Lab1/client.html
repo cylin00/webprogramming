@@ -150,17 +150,22 @@
                         <h3>Account Settings</h3>
                         
                         <form id="changePasswordForm" onsubmit="return validateChangePassword(this)">
-                            <label>Old Password:</label>
-                            <input type="password" name="oldPassword" required /><br />
-                            
-                            <label>New Password:</label>
-                            <input type="password" name="newPassword" id="new_pswd" required minlength="8" /><br />
-                            
-                            <label>Repeat New Password:</label>
-                            <input type="password" name="repeatNewPassword" id="repeat_new_pswd" required /><br />
-                            
+                            <div class="form-row">
+                                <label>Old Password:</label>
+                                <input type="password" name="oldPassword" required /><br />
+                            </div>
+                            <div class="form-row">
+                                <label>New Password:</label>
+                                <input type="password" name="newPassword" id="new_pswd" required minlength="8" /><br />
+                            </div>
+                            <div class="form-row">
+                                <label>Repeat New Password:</label>
+                                <input type="password" name="repeatNewPassword" id="repeat_new_pswd" required /><br />
+                            </div>
                             <div id="changePasswordError" class="error-message"></div>
-                            <button type="submit">Change Password</button>
+                            <div class="form-row submit-row">
+                                <button type="submit">Change Password</button>
+                            </div>
                         </form>
                     
                         <hr />
