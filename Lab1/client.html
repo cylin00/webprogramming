@@ -13,28 +13,64 @@
                 <div class="login-section">
                     <h2>Log In</h2>
                     <form id="loginForm" onsubmit="return validateLogin(this)">
-                        Email: <input type="email" name="email" required /><br />
-                        Password: <input type="password" name="password" required minlength="8" required /><br />
-                        <div id="loginError" class="error-message"></div> <button type="submit">Send</button>
+                        <div class="form-row">
+                            <label for="login_email">Email:</label>
+                            <input type="email" name="email" id="login_email" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="login_password">Password:</label>
+                            <input type="password" name="password" id="login_password" required minlength="8" required />
+                        </div>
+                        <div id="loginError" class="error-message"></div>
+                        <div class="form-row submit-row"> 
+                            <button type="submit">Send</button>
+                        </div>
                     </form>
                 </div>
                 
                 <div class="signup-section">
                     <h2>Sign Up Here</h2>
                     <form id="signupForm" onsubmit="return validateSignup(this)">
-                        Email: <input type="email" name="email" required /><br />
-                        Password: <input type="password" name="pswd" id="signup_pswd" required minlength="8"/><br />
-                        Repeat Password: <input type="password" name="repeat_pswd" id="repeat_pswd" required/><br />
-                        First Name: <input type="text" name="firstname" required /><br />
-                        Family Name: <input type="text" name="familyname" required /><br />
-                        Gender: <select name="gender" required>
-                            <option value="">Select</option>
-                            <option value="male">Male</option>
+                        <div class="form-row">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="signup_pswd">Password:</label>
+                            <input type="password" name="pswd" id="signup_pswd" required minlength="8">
+                        </div>
+                        <div class="form-row">
+                            <label for="repeat_pswd">Repeat Password:</label>
+                            <input type="password" name="repeat_pswd" id="repeat_pswd" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="firstname">First Name:</label>
+                            <input type="text" name="firstname" id="firstname" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="familyname">Family Name:</label>
+                            <input type="text" name="familyname" id="familyname" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="gender">Gender:</label>
+                            <select name="gender" id="gender" required>
+                                <option value="">Select</option>
+                                <option value="male">Male</option>
                             <option value="female">Female</option>
-                        </select><br />
-                        City: <input type="text" name="city" required /><br />
-                        Country: <input type="text" name="country" required /><br />
-                        <div id="signupError" class="error-message"></div> <button type="submit">Send</button>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <label for="city">City:</label>
+                            <input type="text" name="city" id="city" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="country">Country:</label>
+                            <input type="text" name="country" id="country" required />
+                        </div>
+                        <div id="signupError" class="error-message"></div> 
+                        <div class="form-row submit-row"> 
+                            <button type="submit">Send</button>
+                        </div>
                     </form>
                 </div>
             </div>

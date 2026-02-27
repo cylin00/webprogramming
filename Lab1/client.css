@@ -17,6 +17,7 @@ body {
 }
   
 .logo-section {
+    height: 400px;
     grid-row: 1 / span 2; 
     background: white;
     border: 2px solid black;
@@ -24,15 +25,15 @@ body {
 
 /* adjust the size of image */
 .logo-section img { 
-    width: 90%;       
+    width: 100%;       
     height: auto;      
-    display: block;    
-    margin: 20px auto;
+    display: block;
 }
   
 .login-section, .signup-section {
     background: white;
     border: 2px solid black;
+    padding-bottom: 0px;
 }
   
 .main-container h2 {
@@ -44,18 +45,34 @@ body {
 .main-container form {
     font-size: 10px;   
     padding: 0 5px;   
+    margin-bottom: 0px;
 }
 
 .main-container input, 
 .main-container select {
+    width: 60%; 
     font-size: 10px;
     padding: 3px;
-    margin-bottom: 8px; 
 }
 
 .main-container > div {
     padding-left: 10px;   
     box-sizing: border-box;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px; 
+}
+.submit-row {
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+.form-row label {
+    width: 40%; 
+    font-size: 12px;
+    display: inline-block;
 }
 
 /* button default */
