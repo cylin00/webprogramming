@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <link href="client.css" type="text/css" rel="stylesheet">
+        <script src="client.js" type="text/javascript"></script>
+        <script src="serverstub.js" type="text/javascript"></script>
+
+        <script type="text/view" id="welcomeview"> <!-- html/view -->
+            <div class="main-container">
+                <div class="logo-section">
+                    <img src="wimage.png" alt="logo">
+                </div>
+        
+                <div class="login-section">
+                    <h2>Log In</h2>
+                    <form id="loginForm" onsubmit="return validateLogin(this)">
+                        Email: <input type="email" name="email" required /><br />
+                        Password: <input type="password" name="password" required minlength="8" required /><br />
+                        <div id="loginError" class="error-message"></div> <button type="submit">Send</button>
+                    </form>
+                </div>
+                
+                <div class="signup-section">
+                    <h2>Sign Up Here</h2>
+                    <form id="signupForm" onsubmit="return validateSignup(this)">
+                        Email: <input type="email" name="email" required /><br />
+                        Password: <input type="password" name="pswd" id="signup_pswd" required minlength="8"/><br />
+                        Repeat Password: <input type="password" name="repeat_pswd" id="repeat_pswd" required/><br />
+                        First Name: <input type="text" name="firstname" required /><br />
+                        Family Name: <input type="text" name="familyname" required /><br />
+                        Gender: <select name="gender" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select><br />
+                        City: <input type="text" name="city" required /><br />
+                        Country: <input type="text" name="country" required /><br />
+                        <div id="signupError" class="error-message"></div> <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </script>
+
+        <script type="text/view" id="profileview">
+            <div class="profile-layout">
+                <nav class="tabs">
+                    <button class="tab-link active" onclick="openTab(event, 'home-panel')">Home</button>
+                    <button class="tab-link" onclick="openTab(event, 'browse-panel')">Browse</button>
+                    <button class="tab-link" onclick="openTab(event, 'account-panel')">Account</button>
+                </nav>
+        
+                <div id="tab-contents">
+                    <div id="home-panel" class="tab-content" style="display:block;">
+                        <div class="user-profile-info">
+                            <h3>User Info</h3>
+                            <p>Email: <span id="info-email"></span></p>
+                            <p>Name: <span id="info-firstname"></span> <span id="info-familyname"></span></p>
+                            <p>Gender: <span id="info-gender"></span></p>
+                            <p>City: <span id="info-city"></span></p>
+                            <p>Country: <span id="info-country"></span></p>
+                        </div>
+                    
+                        <hr>
+                    
+                        <div class="post-message-area">
+                            <textarea id="post-textarea" placeholder="Write something on your wall..."></textarea><br>
+                            <button onclick="postToHomeWall()">Post</button>
+                        </div>
+                    
+                        <hr>
+                    
+                        <div class="wall-area">
+                            <h3>Your Wall <button onclick="loadHomeWall()">Reload Wall</button></h3>
+                            <div id="wall-messages">
+                                </div>
+                        </div>
+                    </div>
+        
+                    <div id="browse-panel" class="tab-content" style="display:none;">
+                        <div class="search-area">
+                            <input type="email" id="browse-search-email" placeholder="Enter user email: ">
+                            <button onclick="searchUser()">Search</button>
+                            <div id="browse-search-error" class="error-message"></div>
+                        </div>
+                    
+                        <hr>
+                    
+                        <div id="browse-result-area" style="display:none;">
+                            <div class="user-profile-info">
+                                <h3>User Info</h3>
+                                <p>Email: <span id="browse-info-email"></span></p>
+                                <p>Name: <span id="browse-info-firstname"></span> <span id="browse-info-familyname"></span></p>
+                                <p>Gender: <span id="browse-info-gender"></span></p>
+                                <p>City: <span id="browse-info-city"></span></p>
+                                <p>Country: <span id="browse-info-country"></span></p>
+                            </div>
+                    
+                            <hr>
+                    
+                            <div class="post-message-area">
+                                <textarea id="browse-post-textarea" placeholder="Write something on their wall..."></textarea><br>
+                                <button onclick="postToBrowseWall()">Post</button>
+                            </div>
+                    
+                            <hr>
+                    
+                            <div class="wall-area">
+                                <h3>User's Wall <button onclick="reloadBrowseWall()">Reload Wall</button></h3>
+                                <div id="browse-wall-messages"></div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div id="account-panel" class="tab-content" style="display:none;">
+                        <h3>Account Settings</h3>
+                        
+                        <form id="changePasswordForm" onsubmit="return validateChangePassword(this)">
+                            <label>Old Password:</label>
+                            <input type="password" name="oldPassword" required /><br />
+                            
+                            <label>New Password:</label>
+                            <input type="password" name="newPassword" id="new_pswd" required minlength="8" /><br />
+                            
+                            <label>Repeat New Password:</label>
+                            <input type="password" name="repeatNewPassword" id="repeat_new_pswd" required /><br />
+                            
+                            <div id="changePasswordError" class="error-message"></div>
+                            <button type="submit">Change Password</button>
+                        </form>
+                    
+                        <hr />
+                    
+                        <button onclick="signOutUser()">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </script>
+    </head>
+
+    <body>
+        <div id="content-container"></div>
+    </body>
+</html>
